@@ -1,7 +1,7 @@
 .menuContainer {
     height: 50px;
     width: 796px;
-    background-color: white;
+    background-color: #f9fdff;
     border: 2px solid black;
 }
 
@@ -16,4 +16,8 @@
 
 #widthInput {
     width: 50px;
+}
+
+.buttonContainer6{
+    cursor: default;
 }

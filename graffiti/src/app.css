@@ -1,6 +1,7 @@
 .app{
-    background-color: white;
-    height: 616px;
+    background-color: #f9fdff;
+    height: 620px;
     width: 800px;
     margin: 0 auto;
+    filter: drop-shadow(0 0 20px #b1c8d1);
 }

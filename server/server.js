@@ -4,9 +4,13 @@ var port = 8000;
 var ws = new Server({port: port});
 var receiver;
 
+console.log("server started")
+
 ws.on('connection', function(w){
   w.on('message', function(msg){
     console.log('message from client: ', msg);
+    // receiver message initially sent by receiver
+    // so server knows exactly where to send things
     if (msg == "receiver"){
       receiver = w;
     }

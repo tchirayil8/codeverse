@@ -4,6 +4,8 @@ import "./menu.css";
 import Button from "./button"
 import Canvas from "./canvas"
 
+// keep websocket, buttons states, canvas color, and
+// pen width as state for Menu to pass to Canvas
 interface menuState {
     connection: WebSocket;
     button1: boolean;
@@ -19,6 +21,7 @@ interface menuState {
 class Menu extends Component<{},menuState> {
     constructor(props: any) {
         super(props);
+        // default values for canvas
         this.state = {
             connection: new WebSocket('ws://localhost:8000'),
             button1: true,
@@ -35,10 +38,10 @@ class Menu extends Component<{},menuState> {
         this.inputChange = this.inputChange.bind(this);
     }
 
+    // change the button state based on which button was clicked
+    // class name of container div is used as switch
     clickHandler(e: MouseEvent) {
         let canvas: any = document.getElementById('canvas');
-        let ctx = canvas!.getContext('2d');
-        let connection = this.state.connection;
         switch (e.currentTarget.className){
             case "buttonContainer1":
                 this.setState({
@@ -99,6 +102,8 @@ class Menu extends Component<{},menuState> {
                     button5: false,
                     button6: true,
                 });
+                // create URL for the canvas img
+                // then assign to download <a> to download
                 let button = document.getElementById('saveButton') as HTMLAnchorElement;
                 let dataURL = canvas.toDataURL('image/png');
                 button.href = dataURL;
@@ -106,6 +111,8 @@ class Menu extends Component<{},menuState> {
         }
     }
 
+    // whenever Menu updates, check if button4/5/6 are pressed
+    // if so, allow to stay active for 100ms then revert to prevState
     componentDidUpdate(prevProps: any, prevState: menuState){
         let component = this;
         if (this.state.button5){
@@ -125,12 +132,16 @@ class Menu extends Component<{},menuState> {
         }
     }
 
+    // change the color based on slider.hex
     handleChange(color: any) {
+        console.log(typeof(color))
         this.setState({
             color: color.hex,
         });
     }
 
+    // onchange of width slider, 
+    // change the state.width, which is sent to Canvas
     inputChange(event: React.FormEvent) {
         let ele = event.nativeEvent.target as HTMLInputElement;
         let val = ele.value;
@@ -165,9 +176,11 @@ class Menu extends Component<{},menuState> {
                         </form>
                     </div>
                 </div>
+
                 <div className="colorSelector">
                     <HuePicker color={this.state.color} onChangeComplete={this.handleChange} width="800px"/>
                 </div>
+
                 <Canvas buttons={this.state}/>
             </div>
         );
