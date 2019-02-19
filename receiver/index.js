@@ -1,5 +1,5 @@
 window.onload = function () {
-    var connection = new WebSocket('ws://127.0.0.1:8000');
+    var connection = new WebSocket('ws://localhost:8000');
     let queue = [];
 
     connection.onopen = function () {

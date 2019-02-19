@@ -20,7 +20,7 @@ class Menu extends Component<{},menuState> {
     constructor(props: any) {
         super(props);
         this.state = {
-            connection: new WebSocket('ws://127.0.0.1:8000'),
+            connection: new WebSocket('ws://localhost:8000'),
             button1: true,
             button2: false,
             button3: false,
