@@ -1,3 +1,13 @@
+.appContainer{
+    background-color: #c5f0ff
+}
+
+.headerContainer {
+    background-color: #c5f0ff;
+    width: 800px;
+    margin: 0 auto;
+}
+
 .app{
     background-color: #f9fdff;
     height: 620px;
