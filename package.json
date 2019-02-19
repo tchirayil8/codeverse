@@ -1,0 +1,20 @@
+{
+  "name": "codeverse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installer": "cd graffiti && npm install && cd ../ && cd server && npm install && cd ../ && cd receiver && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchirayil8/codeverse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tchirayil8/codeverse/issues"
+  },
+  "homepage": "https://github.com/tchirayil8/codeverse#readme"
+}
