@@ -1,0 +1,23 @@
+.button {
+    height: 40px;
+    width: 50px;
+    background-color: white;
+    float: left;
+    margin: 5px;
+    color: black;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.button__icon {
+    margin: 5px 10px;
+}
+
+.button-active {
+    border: 4px solid black;
+}
+
+.button-active .button__icon {
+    margin: 1px 6px;
+}

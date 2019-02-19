@@ -1,0 +1,19 @@
+.menuContainer {
+    height: 50px;
+    width: 796px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.colorSelector {
+    clear: left;
+}
+
+.widthSelector {
+    margin: 15px 5px;
+    float: right;
+}
+
+#widthInput {
+    width: 50px;
+}

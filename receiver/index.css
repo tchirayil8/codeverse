@@ -1,0 +1,21 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 550px;
+    width: 798px;
+    margin: 0 auto;
+}
+
+.receiverImg {
+    border: 2px solid black;
+}
